@@ -3,6 +3,8 @@ import tasksReducer from '../features/task/taskSlice'
 
 // almacenamiento vacio global
 export const store = configureStore({
-    task: tasksReducer
+    reducer: {
+        tasks: tasksReducer
+    },
 })
 
