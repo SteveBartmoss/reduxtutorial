@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addTask } from "../features/task/taskSlice"
 
 
 export function TaskForm(){
@@ -7,6 +9,8 @@ export function TaskForm(){
         title:'',
         description:''
     })
+
+    const dispach = useDispatch()
 
     const handleChange = (event)=>{
         //console.log(event.target.mane, e.target.value)
@@ -19,11 +23,12 @@ export function TaskForm(){
     const handleSubmit = (event)=>{
         event.preventDefault()
         console.log(task)
+        dispach(addTask(task))
     }
 
     return(
         <form onSubmit={handleSubmit}>
-            
+
             <input name="title" type="text" placeholder="title" onChange={handleChange} />
 
             <textarea name="description" placeholder="description" onChange={handleChange} ></textarea>
