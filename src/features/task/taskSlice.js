@@ -22,6 +22,7 @@ export const taskSlice = createSlice({
         addTask: (state,action) => {
             console.log(state, action)
             state.push(action.payload)
+            //[...state, action.payload] de esta forma de aplicaria con el operador spread
         }
     }
 })
