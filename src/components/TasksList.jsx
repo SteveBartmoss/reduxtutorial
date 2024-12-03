@@ -1,10 +1,16 @@
 import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import { deleteTask } from "../features/task/taskSlice"
 
 export function TasksList(){
 
     const listTasks = useSelector(state => state.tasks)
+
+    const dispatch = useDispatch()
+
     const handleDelete=(id)=>{
         console.log(id)
+        dispatch(deleteTask(id))    
     }
 
     return(
