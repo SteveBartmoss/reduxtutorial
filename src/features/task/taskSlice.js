@@ -25,11 +25,11 @@ export const taskSlice = createSlice({
             //[...state, action.payload] de esta forma de aplicaria con el operador spread
         },
         deleteTask: (state,action) =>{
-            state = state.filter(element => element.id === action.payload.id)
+            state = state.filter(element => element.id === action.payload)
         }
-    }
+    },
 })
 
-export const {addTask} = taskSlice.actions
+export const {addTask, deleteTask} = taskSlice.actions
 
 export default taskSlice.reducer
