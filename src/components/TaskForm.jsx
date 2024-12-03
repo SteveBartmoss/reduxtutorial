@@ -23,7 +23,10 @@ export function TaskForm(){
     const handleSubmit = (event)=>{
         event.preventDefault()
         console.log(task)
-        dispach(addTask(task))
+        dispach(addTask({
+            ...task,
+            id: 3, //cambiar por uuid cuando se instale uuid
+        }))
     }
 
     return(
