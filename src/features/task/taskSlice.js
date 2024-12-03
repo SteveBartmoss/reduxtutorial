@@ -23,6 +23,9 @@ export const taskSlice = createSlice({
             console.log(state, action)
             state.push(action.payload)
             //[...state, action.payload] de esta forma de aplicaria con el operador spread
+        },
+        deleteTask: (state,action) =>{
+            state = state.filter(element => element.id === action.payload.id)
         }
     }
 })
