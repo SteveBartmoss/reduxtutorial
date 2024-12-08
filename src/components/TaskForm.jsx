@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { addTask } from "../features/task/taskSlice"
-
+import { v4 as uuid } from "uuid"
 
 export function TaskForm(){
 
@@ -25,7 +25,7 @@ export function TaskForm(){
         console.log(task)
         dispach(addTask({
             ...task,
-            id: 3, //cambiar por uuid cuando se instale uuid
+            id: uuid(),  //3, //cambiar por uuid cuando se instale uuid
         }))
     }
 
