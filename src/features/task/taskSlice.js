@@ -26,7 +26,7 @@ export const taskSlice = createSlice({
         },
         deleteTask: (state,action) =>{
             console.log("entro")
-            console.log(action.payload)
+            console.log(action)
             console.log(state)
             return state.filter(element => element.id !== action.payload)
         }
